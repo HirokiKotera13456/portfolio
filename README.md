@@ -15,7 +15,7 @@
 犬の飼い主
 
 ### 主な利用シーン
-飼い主同士で愛犬の教育や愛犬の自慢などのコミュニケーションをとりたいとき。
+飼い主同士で愛犬の教育や愛犬のアピールなどのコミュニケーションをとりたいとき。
 
 ## チャレンジ要素一覧
 https://docs.google.com/spreadsheets/d/1UNnY_VRz6ETkY7eTiuQJrCLlazfYESRLGVwjk_zuw84/edit#gid=0
