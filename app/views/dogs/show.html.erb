@@ -1,2 +1,11 @@
-<h1>Dogs#show</h1>
-<p>Find me in app/views/dogs/show.html.erb</p>
+<div>
+<%= attachment_image_tag @dog, :image, size: "300x300" %>
+  <p>ショップ名：<%= @dog.name %></p>
+  <p>説明：<%= @dog.caption %></p>
+  <p>ユーザーネーム：<%= @dog.user.name %></p>
+  <p>投稿日時：<%= @dog.created_at.strftime('%Y/%m/%d') %></p>
+  <% if @dog.user == current_user %>
+    <%= link_to "削除", dog_path(@dog), method: :delete %>
+    <%= link_to "編集", edit_dog_path %>
+  <% end %>
+</div>
