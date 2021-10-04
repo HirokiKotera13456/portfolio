@@ -10,6 +10,8 @@
   </head>
 
   <body>
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
   <% if user_signed_in? %>
       <li>
         <%= link_to '投稿フォーム', new_dog_path %>
@@ -19,6 +21,12 @@
       </li>
       <li>
         <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+      </li>
+      <li>
+      <%= link_to 'マイページ', user_path(current_user.id) %>
+      </li>
+      <li>
+      <%= link_to 'ユーザー一覧', users_path %>
       </li>
     <% else %>
       <li>

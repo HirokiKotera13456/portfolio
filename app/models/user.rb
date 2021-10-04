@@ -5,4 +5,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :dogs, dependent: :destroy
+  attachment :profile_image
+
+  def active_for_authentication?
+    super && (self.is_deleted == false)
+  end
 end
