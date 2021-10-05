@@ -1,13 +1,14 @@
 <div class="container mt-3">
   <div class="row">
-    <div class="col-10 offset-1 ">
-      <h2><p><%= @dog.user.name %>さんの投稿一覧</p></h2>
+    <div class="col-md-12 ">
+      <h2><p>投稿一覧</p></h2>
       <table class="table">
         <thead>
           <tr>
             <th></th>
             <th><p>犬種</p></th>
             <th><p>ワンちゃんについて</p></th>
+            <th><p>カテゴリー</p></th>
             <th><p>ユーザーネーム</p></th>
             <th><p>投稿日時</p></th>
             <th><p></p></th>
@@ -26,6 +27,9 @@
             <p><%= @dog.caption %></p>
             </td>
             <td>
+            <p>
+
+            </p>
             </td>
             <td>
               <p><%= @dog.user.name %></p>
@@ -33,6 +37,7 @@
             <td>
             <p><%= @dog.created_at.strftime('%Y/%m/%d') %></p>
             </td>
+
             <td>
             <% if @dog.user == current_user %>
               <%= link_to "編集", edit_dog_path %>
@@ -44,6 +49,19 @@
         </tbody>
       </table>
       </div>
+    </div>
+    <div class="col-md-12" >
+      <td>
+             <%= form_with(model:[@dog, @dog_comment], remote: true) do |f| %>
+               <div class="form-group ">
+                  <%= f.text_area :comment, rows:'2',placeholder: "コメントを記入してください" %>
+               </div>
+               <%= f.submit "投稿", class:"btn btn-success " %>
+            <% end %>
+            <div id="dog_comments_<%= @dog.id %>">
+              <%= render 'dog_comments/dog_comments', dog: @dog %>
+           </div>
+        </td>
     </div>
   </div>
 </div>

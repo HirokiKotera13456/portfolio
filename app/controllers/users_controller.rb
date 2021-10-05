@@ -13,7 +13,7 @@ end
 
 
   def index
-    @users = User.all
+    @users = User.page(params[:page]).reverse_order
     @user = current_user
   end
 

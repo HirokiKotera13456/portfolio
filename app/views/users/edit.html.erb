@@ -1,12 +1,15 @@
 <div class="container">
   <div class="row">
-    <div class="col-8 offset-2">
+    <div class="col-md-8 offset-md-2">
       <h2>ユーザー編集</h2>
       <%= form_with model: @user, local: true do |f| %>
         <div class="form-group">
           <%= f.label :名前 %>
           <%= f.text_field :name, class:"form-control" %>
-        </div>
+        <div class="form-group">
+          <%= f.label :愛犬の紹介 %>
+          <%= f.text_field :opinion, class:"form-control" %>
+
         <div class="form-group">
           <%= f.label :画像 %>
           <%= f.attachment_field :profile_image, class:"form-control" %>

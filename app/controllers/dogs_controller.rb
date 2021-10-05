@@ -16,7 +16,7 @@ class DogsController < ApplicationController
   end
 
   def index
-    @dogs = Dog.all
+    @dogs = Dog.page(params[:page]).reverse_order
     @user = current_user
   end
 
@@ -36,6 +36,7 @@ class DogsController < ApplicationController
   def show
     @dog=Dog.find(params[:id])
     @user = @dog.user
+    @dog_comment = DogComment.new
   end
 
   def destroy
