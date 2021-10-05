@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 offset-md-2">
+      <h2><p>登録者情報</p></h2>
+        <table class="table">
+          <tbody>
+            <tr>
+              <td>
+                <%= attachment_image_tag @user, :profile_image, format: "jpeg", fallback: "no_image.jpg", size: "80x80" %>
+              </td>
+              <td>
+                ユーザー名：<%= @user.name %>
+              </td>
+              <td>
+              <% if @user.id == current_user.id %>
+                <p><%= link_to "編集", edit_user_path(@user),class:"btn btn-outline-info" %></p>
+              <% end %>
+              </td>
+              <td>
+              <% if user_signed_in? && @user.id == current_user.id %>
+                  <%= link_to "退会", users_hide_path(current_user), method: :put, "data-confirm" => "本当に退会しますか？", class: "btn btn-outline-danger"  %>
+              <% end %>
+              </td>
+              
+            </tr>
+          </tbody>
+        </table>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,57 @@
+<header>
+  <nav class="navbar navbar-light" style="background-color: #faf0e6">
+    <div class="container">
+      <a class="navbar-brand" href="/"><h1>DogPair</h1></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav ml-auto">
+          <% if user_signed_in? %>
+            <li>
+              <%= link_to user_path(current_user.id) do %>
+                <h4><i class="fas fa-home nav-link">マイページ</i></h4>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to users_path do %>
+                <h4><i class="fas fa-users nav-link ">ユーザー一覧</i></h4>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to dogs_path do %>
+                <h4><i class="fas fa-dog nav-link t">Q&Aコーナー</i></h4>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to new_dog_path do %>
+                <h4><i class="fas fa-dog nav-link ">質問投稿フォーム</i></h4>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to destroy_user_session_path, method: :delete  do %>
+                <h4><i class="fas fa-sign-out-alt nav-link t">ログアウト</i></h4>
+              <% end %>
+            </li>
+          <% else %>
+            <li>
+              <%= link_to root_path do %>
+                <h4><i class="fas fa-home nav-link ">トップページ</i></h4>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to new_user_registration_path do %>
+                <h4><i class="fas fa-user-plus nav-link ">新規登録</i></h4>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to user_session_path do %>
+                <h4><i class="fas fa-sign-in-alt nav-link ">ログイン</i></h4>
+              <% end %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>

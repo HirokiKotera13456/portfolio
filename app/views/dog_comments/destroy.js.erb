@@ -1,0 +1,1 @@
+$('#dog_comments_<%= @dog.id %>').html("<%= j(render partial: "dog_comments/dog_comments",locals: {dog: @dog}) %>");
