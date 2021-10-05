@@ -6,11 +6,11 @@
         <thead>
           <tr>
             <th></th>
-            <th><p>犬種</p></th>
-            <th><p>ワンちゃんについて</p></th>
-            <th><p>カテゴリー</p></th>
-            <th><p>ユーザーネーム</p></th>
-            <th><p>投稿日時</p></th>
+            <th>犬種</th>
+            <th>ワンちゃんについて</th>
+            <th>カテゴリー</th>
+            <th>ユーザーネーム</th>
+            <th>投稿日時</th>
             <th><p></p></th>
             <th colspan="3"></th>
           </tr>
@@ -21,10 +21,10 @@
             <%= attachment_image_tag @dog, :image, size: "200x200" %>
             </td>
             <td>
-            <p><%= @dog.name %></p>
+            <%= @dog.name %>
             </td>
             <td>
-            <p><%= @dog.caption %></p>
+            <%= @dog.caption %>
             </td>
             <td>
             <p>
@@ -32,12 +32,15 @@
             </p>
             </td>
             <td>
-              <p><%= @dog.user.name %></p>
+              <%= @dog.user.name %>
             </td>
             <td>
-            <p><%= @dog.created_at.strftime('%Y/%m/%d') %></p>
+            <%= @dog.created_at.strftime('%Y/%m/%d') %>
             </td>
-
+            <td>
+            <div id="favorite-btn_<%= @dog.id %>">
+              <%= render 'favorites/favorite' , dog: @dog %>
+            </td>
             <td>
             <% if @dog.user == current_user %>
               <%= link_to "編集", edit_dog_path %>
@@ -58,7 +61,7 @@
                </div>
                <%= f.submit "投稿", class:"btn btn-success " %>
             <% end %>
-            <div id="dog_comments_<%= @dog.id %>">
+            <div id="dog_comments">
               <%= render 'dog_comments/dog_comments', dog: @dog %>
            </div>
         </td>

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  image_id: 1
+  dog_id: 1
+  dog_comment_id: 1
+
+two:
+  user_id: 1
+  image_id: 1
+  dog_id: 1
+  dog_comment_id: 1

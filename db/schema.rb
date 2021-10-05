@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_05_031006) do
+ActiveRecord::Schema.define(version: 2021_10_05_081657) do
 
   create_table "dog_comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "comment"
@@ -25,6 +25,15 @@ ActiveRecord::Schema.define(version: 2021_10_05_031006) do
     t.string "image_id"
     t.text "caption"
     t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "favorites", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "image_id"
+    t.integer "dog_id"
+    t.integer "dog_comment_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

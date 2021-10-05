@@ -3,14 +3,34 @@
     <div class="col-md-8 offset-md-2">
       <h2><p>登録者情報</p></h2>
         <table class="table">
+          <thead>
+          <th></th>
+          <th>ユーザー名</th>
+          <th>愛犬の紹介</th>
+          <th>フォロワー数</th>
+          <th>フォロー数</th>
+          </thead>
           <tbody>
             <tr>
               <td>
                 <%= attachment_image_tag @user, :profile_image, format: "jpeg", fallback: "no_image.jpg", size: "80x80" %>
               </td>
               <td>
-                ユーザー名：<%= @user.name %>
+               <%= @user.name %>
               </td>
+              <td>
+                <%= @user.opinion %>
+              </td>
+               <td>
+              <%= link_to user_followers_path(@user),class:"btn btn-outline-info" do %>
+                <%= @user.followers.count %>
+              <% end %>
+              </td>
+              <td>
+               <%= link_to user_followings_path(@user),class:"btn btn-outline-info" do %>
+                  <%= @user.followings.count %>
+               <% end %>
+               </td>
               <td>
               <% if @user.id == current_user.id %>
                 <p><%= link_to "編集", edit_user_path(@user),class:"btn btn-outline-info" %></p>
