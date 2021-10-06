@@ -55,11 +55,11 @@
     </div>
     <div class="col-md-12" >
       <td>
-             <%= form_with(model:[@dog, @dog_comment], remote: true) do |f| %>
-               <div class="form-group ">
-                  <%= f.text_area :comment, rows:'2',placeholder: "コメントを記入してください" %>
-               </div>
-               <%= f.submit "投稿", class:"btn btn-success " %>
+             <%= form_with(model: [@dog, @dog_comment], format: :js, remote: true) do |f| %>
+              <div class="form-group ">
+                <%= f.text_area :comment, rows: '2', placeholder: "コメントを記入してください" %>
+              </div>
+              <%= f.submit "投稿", class: "btn btn-success " %>
             <% end %>
             <div id="dog_comments">
               <%= render 'dog_comments/dog_comments', dog: @dog %>

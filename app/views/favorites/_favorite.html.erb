@@ -1,9 +1,9 @@
 <% if dog.favorited_by?(current_user) %>
-      <%= link_to dog_favorites_path(dog), method: :delete, remote: true do %>
-        <i class="fas fa-dog like-btn" ><%= dog.favorites.count %> いいね</i>
-      <% end %>
-    <% else %>
-      <%= link_to dog_favorites_path(dog), method: :post, remote: true do %>
-        <i class="fas fa-bone unlike-btn" ><%= dog.favorites.count %> いいね</i>
-      <% end %>
+  <%= link_to dog_favorites_path(dog, format: :js), method: :delete, remote: true do %>
+    <i class="fas fa-dog like-btn"><%= dog.favorites.count %> いいね</i>
   <% end %>
+<% else %>
+  <%= link_to dog_favorites_path(dog, format: :js), method: :post, remote: true do %>
+    <i class="fas fa-bone unlike-btn"><%= dog.favorites.count %> いいね</i>
+  <% end %>
+<% end %>
