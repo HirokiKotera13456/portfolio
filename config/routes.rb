@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   resources :dogs, only: [:new, :create, :index, :show, :destroy, :edit, :update] do
     resources :dog_comments, only: [:create, :destroy]
+    resource :favorites, only: [:create, :destroy]
   end
   resources :users, only: [:show, :edit, :update, :index] do
     resource :relationships, only: [:create, :destroy]

@@ -15,6 +15,6 @@ class DogCommentsController < ApplicationController
   private
 
   def dog_comment_params
-    params.require(:dog_comment).permit(:comment)
+    params.require(:dog_comment).permit(:comment).merge(user_id: current_user.id)
   end
 end

@@ -16,9 +16,9 @@
               <td><p><%= link_to "ユーザー詳細", user_path(user),class:"btn btn-outline-info" %></p></td>
               <td><% unless current_user == user %>
                     <% if current_user.following?(user) %>
-                      <%= link_to "Unfollow", user_relationships_path(user.id),class:"btn btn-primary", method: :delete %>
+                      <%= link_to "フォローを解除する", user_relationships_path(user.id),class:"btn btn-primary", method: :delete %>
                     <% else %>
-                      <%= link_to "Follow", user_relationships_path(user.id),class:"btn btn-success", method: :post %>
+                      <%= link_to "フォローする", user_relationships_path(user.id),class:"btn btn-success", method: :post %>
                     <% end %>
                   <% end %>
               </td>
