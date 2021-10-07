@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
   get 'maps/index'
+  get 'maps/kyoto'
+  get 'maps/hyogo'
+  get 'maps/osaka'
+  get 'maps/nara'
+  get 'maps/wakayama'
+  get 'maps/shiga'
   root "homes#top"
   devise_for :users
   get 'maps/index'
