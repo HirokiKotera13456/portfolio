@@ -24,6 +24,11 @@
               <% end %>
             </li>
             <li>
+              <%= link_to maps_index_path do %>
+                <h4><i class="fas fa-dog nav-link t">関西ドッグラン一覧</i></h4>
+              <% end %>
+            </li>
+            <li>
               <%= link_to new_dog_path do %>
                 <h4><i class="fas fa-dog nav-link ">質問投稿フォーム</i></h4>
               <% end %>
@@ -35,8 +40,13 @@
             </li>
           <% else %>
             <li>
-              <%= link_to root_path do %>
-                <h4><i class="fas fa-home nav-link ">トップページ</i></h4>
+              <%= link_to dogs_path do %>
+                <h4><i class="fas fa-dog nav-link t">Q&Aコーナー</i></h4>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to maps_index_path do %>
+                <h4><i class="fas fa-dog nav-link t">関西ドッグラン一覧</i></h4>
               <% end %>
             </li>
             <li>

@@ -112,7 +112,7 @@ header #logo {
 	flex-direction: column;			/*中のブロックを並べる向きの指定。これは縦に並べる意味。*/
 	width: 32%;						/*ブロック幅*/
 	margin-bottom: 20px;			/*ブロックの下に空ける余白*/
-	background: #d4a500;				/*背景色*/
+	background: #ff8f26;				/*背景色*/
 	color: #fff;					/*文字色*/
 	border-radius: 5px;				/*角丸の指定。ほんの少し角が丸くなります。*/
 	overflow: hidden;				/*角丸から内容が飛び出ないよう、飛び出た部分を非表示にする指定*/
@@ -221,4 +221,9 @@ body {
 .btn1 a {
 	padding: 5px 10px;			/*上下、左右へのボタン内の余白*/
 }
+}
+
+.menu-text1{
+	color:rgb(97, 97, 255);
+	text-decoration: underline;
 }
