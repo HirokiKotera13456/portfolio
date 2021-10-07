@@ -7,7 +7,7 @@
           <tr>
             <th></th>
             <th>犬種</th>
-            <th>ワンちゃんについて</th>
+            <th>質問内容</th>
             <th>カテゴリー</th>
             <th>ユーザーネーム</th>
             <th>投稿日時</th>
@@ -43,9 +43,10 @@
             </td>
             <td>
             <% if @dog.user == current_user %>
-              <%= link_to "編集", edit_dog_path %>
-              <p></p>
-              <%= link_to "削除", dog_path(@dog), method: :delete %>
+              <%= link_to "編集", edit_dog_path, class: "btn btn-success btn-question" %>
+            </td>
+            <td>
+              <%= link_to "削除", dog_path(@dog), method: :delete, class: "btn btn-danger btn-question" %>
             <% end %>
             </td>
           </tr>
@@ -54,17 +55,16 @@
       </div>
     </div>
     <div class="col-md-12" >
-      <td>
+
              <%= form_with(model: [@dog, @dog_comment], format: :js, remote: true) do |f| %>
               <div class="form-group ">
-                <%= f.text_area :comment, rows: '2', placeholder: "コメントを記入してください" %>
+                <%= f.text_area :comment, rows: '2', placeholder: " 回答を記入してください" , class:"textarea1" %>
               </div>
-              <%= f.submit "投稿", class: "btn btn-success " %>
+              <%= f.submit "投稿", class: "btn btn-success btn-question" %>
             <% end %>
             <div id="dog_comments">
               <%= render 'dog_comments/dog_comments', dog: @dog %>
            </div>
-        </td>
     </div>
   </div>
 </div>
