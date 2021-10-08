@@ -21,5 +21,6 @@
 //= require_tree .
 
 
-
-
+$(function() {
+  $('img[usemap]').rwdImageMaps();
+})

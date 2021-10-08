@@ -4,12 +4,11 @@
     <tr>
         <th><% dog.dog_comments.each do |dog_comment| %></th>
          <th><%= attachment_image_tag @user, :profile_image, format: "jpeg", fallback: "no_image.jpg", size: "80x80" %></th
-          <th><p>ユーザーネーム：<%= dog_comment.user.name %></p></th>
-          <th>「<%= dog_comment.comment %>」</th>
-          <th><% if dog_comment.user == current_user %>
-                <%= link_to "削除", dog_dog_comment_path(dog_comment.dog, dog_comment),class:"link1", remote: true ,method: :delete %>
-               <% end %>
-          </th>
+          <th>回答者：<%= dog_comment.user.name %></th>
+          <th><%= dog_comment.comment %></th>
+          <% if dog_comment.user == current_user %>
+                <%= link_to "回答を削除", dog_dog_comment_path(dog_comment.dog, dog_comment),class:"link1", remote: true ,method: :delete ,class:"deleteAnswer" %>
+          <% end %>
         <% end %>
     </tr>
   </tbody>

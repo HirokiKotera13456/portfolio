@@ -1,6 +1,14 @@
 Rails.application.routes.draw do
+  get 'maps/index'
+  get 'maps/kyoto'
+  get 'maps/hyogo'
+  get 'maps/osaka'
+  get 'maps/nara'
+  get 'maps/wakayama'
+  get 'maps/shiga'
   root "homes#top"
   devise_for :users
+  get 'maps/index'
   resources :dogs, only: [:new, :create, :index, :show, :destroy, :edit, :update] do
     resources :dog_comments, only: [:create, :destroy]
     resource :favorites, only: [:create, :destroy]
