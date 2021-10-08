@@ -25,7 +25,7 @@ https://docs.google.com/spreadsheets/d/1UNnY_VRz6ETkY7eTiuQJrCLlazfYESRLGVwjk_zu
 - OS：Linux(ubuntu)
 - 言語：HTML,CSS,JavaScript,Ruby,SQL
 - フレームワーク：Ruby on Rails
-- JSライブラリ：jQuery,slick.js
+- JSライブラリ：jQuery
 - IDE：VisualStudioCode
 
 ## 使用素材
