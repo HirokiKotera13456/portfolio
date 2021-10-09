@@ -5,10 +5,10 @@
       <%= form_with model: @user, local: true do |f| %>
         <div class="form-group">
           <%= f.label :名前 %>
-          <%= f.text_field :name, class:"form-control" %>
+          <%= f.text_field :name, class:"form-control",:placeholder => "9文字以内を推奨しております" %>
         <div class="form-group">
           <%= f.label :愛犬の紹介 %>
-          <%= f.text_field :opinion, class:"form-control" %>
+          <%= f.text_field :opinion, class:"form-control aiken-form",:placeholder => "愛犬のアピールポイントを記入しましょう" %>
 
         <div class="form-group">
           <%= f.label :画像 %>

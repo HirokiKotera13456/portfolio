@@ -4,13 +4,7 @@
       <h2>フォロワー</h2>
         <table class="table">  
           <% if @users.exists? %>
-            <thead>
-              <tr>
-                <th><p>ユーザー名</p></th>
-                <th></th>
-                <th></th>
-              </tr>
-            </thead>
+
             <tbody>
               <% @users.each do |user| %>
                 <tr>

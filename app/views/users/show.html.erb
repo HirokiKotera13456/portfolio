@@ -5,10 +5,6 @@
         <table class="table">
           <thead>
           <th></th>
-          <th>ユーザー名</th>
-          <th>愛犬の紹介</th>
-          <th>フォロワー数</th>
-          <th>フォロー数</th>
           </thead>
           <tbody>
             <tr>
@@ -18,22 +14,19 @@
               <td>
                <%= @user.name %>
               </td>
-              <td>
-                <%= @user.opinion %>
-              </td>
                <td>
               <%= link_to user_followers_path(@user),class:"btn btn-outline-info" do %>
-                <%= @user.followers.count %>
+                <%= @user.followers.count %> :フォロワー
               <% end %>
               </td>
               <td>
                <%= link_to user_followings_path(@user),class:"btn btn-outline-info" do %>
-                  <%= @user.followings.count %>
+                  <%= @user.followings.count %>:フォロー
                <% end %>
                </td>
               <td>
               <% if @user.id == current_user.id %>
-                <p><%= link_to "編集", edit_user_path(@user),class:"btn btn-outline-info" %></p>
+                <%= link_to "編集", edit_user_path(@user),class:"btn btn-outline-info" %>
               <% end %>
               </td>
               <td>
@@ -41,7 +34,15 @@
                   <%= link_to "退会", users_hide_path(current_user), method: :put, "data-confirm" => "本当に退会しますか？", class: "btn btn-outline-danger"  %>
               <% end %>
               </td>
-              
+            </tr>
+          </tbody>
+        </table>
+        <table>
+          <tbody>
+            <tr>
+              <td>
+                <%= @user.opinion %>
+              </td>
             </tr>
           </tbody>
         </table>

@@ -1,15 +1,33 @@
 <table class="table">
     <p>コメント件数：<%= dog.dog_comments.count %></p>
+    <% dog.dog_comments.each do |dog_comment| %>
   <tbody>
     <tr>
-        <th><% dog.dog_comments.each do |dog_comment| %></th>
-         <th><%= attachment_image_tag @user, :profile_image, format: "jpeg", fallback: "no_image.jpg", size: "80x80" %></th
-          <th>回答者：<%= dog_comment.user.name %></th>
-          <th><%= dog_comment.comment %></th>
-          <% if dog_comment.user == current_user %>
-                <%= link_to "回答を削除", dog_dog_comment_path(dog_comment.dog, dog_comment),class:"link1", remote: true ,method: :delete ,class:"deleteAnswer" %>
-          <% end %>
-        <% end %>
+      <td ><%= attachment_image_tag @user, :profile_image, format: "jpeg", fallback: "no_image.jpg", size: "80x80" %></td>
+      <td nowrap>回答者：<%= dog_comment.user.name %></td>
+      <td><%= dog_comment.comment %></td>
+
+      <td nowrap><% if dog_comment.user == current_user %>
+            <%= link_to "回答を削除", dog_dog_comment_path(dog_comment.dog, dog_comment),class:"link1", remote: true ,method: :delete ,class:"deleteAnswer" %>
+      <% end %>
+      </td>
     </tr>
   </tbody>
+    <% if dog_comment.favorited_by?(current_user) %>
+    <p>
+      <%= link_to dog_dog_comment_comment_favorites_path(dog.id, dog_comment.id), method: :delete do %>
+        ♥<%= dog_comment.comment_favorites.count %> いいね
+      <% end %>
+    </p>
+  <% else %>
+    <p>
+      <%= link_to dog_dog_comment_comment_favorites_path(dog.id, dog_comment.id), method: :post do %>
+        ♥<%= dog_comment.comment_favorites.count %> いいね
+      <% end %>
+    </p>
+  <% end %>
+  <% end %>
 </table>
+
+
+
