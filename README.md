@@ -30,3 +30,14 @@ https://docs.google.com/spreadsheets/d/1UNnY_VRz6ETkY7eTiuQJrCLlazfYESRLGVwjk_zu
 
 ## 使用素材
 FontAwesome (https://fontawesome.com/)
+
+## seedデータ
+50.times do |n|
+  User.create!(
+    email:"test#{n + 1}@test.com",
+    password: "111111",
+    name: "テスト#{n + 1}ユーザー",
+  )
+end
+
+

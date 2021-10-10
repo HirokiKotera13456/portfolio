@@ -16,7 +16,7 @@ class DogsController < ApplicationController
   end
 
   def index
-    @dogs = Dog.page(params[:page]).reverse_order
+    @dogs = params[:tag_id].present? ? Tag.find(params[:tag_id]).dogs.page(params[:page]).reverse_order : Dog.all.page(params[:page]).reverse_order
     @user = current_user
   end
 
@@ -49,7 +49,7 @@ class DogsController < ApplicationController
   private
 
   def dog_params
-    params.require(:dog).permit(:name, :image, :caption)
+    params.require(:dog).permit(:name, :image, :caption, tag_ids: [])
   end
 
 end
