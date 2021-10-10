@@ -48,7 +48,7 @@
           </tr>
         </thead>
         <tbody>
-            <td style="width:1%">
+            <td style="width:1%" class="qbox">
             <%= @dog.caption %>
             </td>
         </tbody>
@@ -56,18 +56,18 @@
       </div>
       </div>
     </div>
-    <div class="col-md-12">
-             <%= form_with(model: [@dog, @dog_comment], format: :js, remote: true) do |f| %>
-              <div class="form-group">
-                <%= f.text_area :comment, rows: '2', placeholder: " 回答を記入してください" , class:"textarea1" %>
-              </div>
-              <%= f.submit "投稿", class: "btn btn-success btn-question" %>
-            <% end %>
-            <div id="dog_comments">
-              <%= render 'dog_comments/dog_comments', dog: @dog %>
-           </div>
-
-
+    <div class="table-responsive">
+      <div class="col-md-12">
+        <%= form_with(model: [@dog, @dog_comment], format: :js, remote: true) do |f| %>
+          <div class="form-group">
+            <%= f.text_area :comment, rows: '2', placeholder: " 回答を記入してください" , class:"textarea1" %>
+          </div>
+          <%= f.submit "投稿", class: "btn btn-success btn-question" %>
+        <% end %>
+        <div id="dog_comments">
+          <%= render 'dog_comments/dog_comments', dog: @dog %>
+        </div>
+      </div>
     </div>
   </div>
 </div>
