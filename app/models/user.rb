@@ -7,6 +7,7 @@ class User < ApplicationRecord
   has_many :dogs, dependent: :destroy
   has_many :dog_comments, dependent: :destroy
   has_many :favorites, dependent: :destroy
+  has_many :comment_favorites, dependent: :destroy
 
   has_many :reverse_of_relationships, class_name: "Relationship", foreign_key: "followed_id", dependent: :destroy
   has_many :followers, through: :reverse_of_relationships, source: :follower
@@ -36,4 +37,13 @@ class User < ApplicationRecord
   end
   # ↑フォロー関連メソッド
 
+  # ゲストログインメソッド
+  def self.guest
+    find_or_create_by!(email: 'guest@example.com') do |user|
+      user.password = SecureRandom.urlsafe_base64
+      # user.confirmed_at = Time.now
+      # 例えば name を入力必須としているならば， user.name = "ゲスト" なども必要
+    end
+  end
+  # ゲストログインメソッド
 end

@@ -1,7 +1,12 @@
 # frozen_string_literal: true
-
 class Users::SessionsController < Devise::SessionsController
   before_action :reject_customer, only: [:create]
+
+  def guest_sign_in
+    user = User.guest
+    sign_in user
+    redirect_to root_path, notice: 'ゲストユーザーとしてログインしました。'
+  end
 
   protected
 

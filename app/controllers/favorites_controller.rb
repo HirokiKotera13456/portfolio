@@ -3,7 +3,6 @@ class FavoritesController < ApplicationController
     @dog = Dog.find(params[:dog_id])
     @favorite = current_user.favorites.new(dog_id: @dog.id)
     @favorite.save
-    
   end
 
   def destroy
