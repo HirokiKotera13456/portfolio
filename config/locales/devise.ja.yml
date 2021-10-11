@@ -1,7 +1,13 @@
 ja:
   activerecord:
     attributes:
+      dog:
+        dog: 投稿
+        name: 名前
+        caption: 質問内容
       user:
+        name: 名前
+        opinion: 愛犬の紹介
         confirmation_sent_at: パスワード確認送信時刻
         confirmation_token: パスワード確認用トークン
         confirmed_at: パスワード確認時刻

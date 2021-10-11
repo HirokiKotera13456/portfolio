@@ -1,4 +1,5 @@
 class DogsController < ApplicationController
+  
 
   def new
     @newdog =Dog.new
@@ -8,10 +9,10 @@ class DogsController < ApplicationController
     @newdog = Dog.new(dog_params)
     @newdog.user_id = current_user.id
    if @newdog.save
-     redirect_to dogs_path
+     redirect_to dogs_path,notice: "投稿されました"
    else
       @user = current_user
-      render :index
+      render :new
    end
   end
 

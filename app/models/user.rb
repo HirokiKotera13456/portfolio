@@ -17,6 +17,7 @@ class User < ApplicationRecord
   has_many :followings, through: :relationships, source: :followed
   # 与フォロー関係を通じて参照→follower_idをフォローしている人
 
+
   attachment :profile_image
 
   # ↓論理削除用メソッド

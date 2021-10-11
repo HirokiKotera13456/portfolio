@@ -1,6 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12">
+    <div class="table-responsive">
       <h2 class="dog-title"><strong>質問一覧</strong></h2>
       <div class="tag-serch"><%= render 'dogs/tag_serch' %></div>
       <table class="table table-hover condensed ">
@@ -8,9 +9,9 @@
           <tr>
             <th></th>
             <th style="width:50px;">犬種</th>
-            <th scope="width:100px;">質問内容</th>
-            <th style="width:100px;">ユーザー</th>
-            <th style="width:100px;">タグ</th>
+            <th nowrap>質問内容</th>
+            <th nowrap>ユーザー</th>
+            <th nowrap>タグ</th>
             <th colspan="3"></th>
           </tr>
         </thead>
@@ -22,16 +23,16 @@
                 <%= attachment_image_tag dog, :image, size: "150x150" %>
               <% end %>
             </td>
-            <td>
+            <td nowrap>
             <%= dog.name %>
             </td>
-            <td>
+            <td nowrap>
             <%= dog.caption %>
             </td>
-            <td>
+            <td nowrap>
             <%= dog.user.name %>
             </td>
-            <td style="width:100px;">
+            <td nowrap>
               <% dog.tags.each do |tag| %>
                   <%= tag.name %>
               <% end %>
@@ -46,6 +47,7 @@
         </tbody>
       </table>
       <%= paginate @dogs %>
+    </div>
     </div>
   </div>
 </div>
