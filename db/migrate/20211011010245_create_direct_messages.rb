@@ -4,7 +4,7 @@ class CreateDirectMessages < ActiveRecord::Migration[5.2]
       t.string :content
       t.integer :user_id
       t.integer :room_id
-
+      t.string :message
       t.timestamps
     end
   end

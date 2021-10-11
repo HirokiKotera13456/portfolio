@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 2021_10_11_010245) do
     t.string "content"
     t.integer "user_id"
     t.integer "room_id"
+    t.string "message"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
