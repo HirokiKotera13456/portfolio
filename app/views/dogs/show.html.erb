@@ -71,3 +71,7 @@
     </div>
   </div>
 </div>
+
+<% @dogs.tags.each do |tag| %>
+    <%= tag.name %>
+<% end %>

@@ -1,10 +1,10 @@
 <div class="container">
   <div class="card card-container">
-  <%= flash[:error] %>
-  <%= render "devise/shared/error_messages", resource: resource %>
     <%= image_tag 'login.png',class:"profile-img-card ",id:"profile-img" %>
     <p id="profile-name" class="profile-name-card"></p>
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+  <%= alert %>
     <div class="field">
       <%= f.label :メールアドレス %><br />
       <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
