@@ -27,4 +27,5 @@ Rails.application.routes.draw do
     get 'followers' => 'relationships#followers', as: 'followers'
   end
   put "/users/:id/hide" => "users#hide", as: 'users_hide'
+  resources :rooms
 end
