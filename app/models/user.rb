@@ -18,6 +18,10 @@ class User < ApplicationRecord
   # 与フォロー関係を通じて参照→follower_idをフォローしている人
 
 
+  has_many :entries
+  has_many :direct_messages
+  has_many :rooms, through: :entries
+
   attachment :profile_image
 
   # ↓論理削除用メソッド

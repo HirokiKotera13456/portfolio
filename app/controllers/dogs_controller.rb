@@ -33,7 +33,7 @@ class DogsController < ApplicationController
       render :edit
     end
   end
-  
+
   def show
     @dog=Dog.find(params[:id])
     @user = @dog.user
