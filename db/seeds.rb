@@ -3,6 +3,3 @@ Tag.create([
     { name: '中型犬' },
     { name: '大型犬'}
     ])
-
-
-    

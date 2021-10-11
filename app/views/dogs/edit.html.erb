@@ -1,6 +1,7 @@
 <div class="container mt-3">
   <div class="row">
     <div class="col-md-6 offset-md-3">
+      <%= render "dogs/error", model: @dog %>
       <h2 class="mt-3">ワンちゃんの情報入力フォーム</h2>
         <%= form_with model: @dog, local: true do |f| %>
           <div class="form-group">
@@ -9,7 +10,7 @@
           </div>
           <div class="form-group">
             <%= f.label :犬種 %>
-            <%= f.text_field :name, class:"form-control",:placeholder => "20文字以内で入力してください"  %>
+            <%= f.text_field :name, class:"form-control" %>
           </div>
           <div class="form-group">
             <%= f.label :説明 %>

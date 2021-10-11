@@ -12,7 +12,7 @@
             <% @users.each do |user| %>
               <td><%= attachment_image_tag user, :profile_image, format: "jpeg", fallback: "no_image.jpg", size: "80x80" %></td>
               <td><%= user.name %></td>
-              <td><p><%= link_to "ユーザー詳細", user_path(user),class:"btn btn-info" %></p></td>
+              <td><%= link_to "ユーザー詳細", user_path(user),class:"btn btn-info" %></td>
               <td><% unless current_user == user %>
                     <% if current_user.following?(user) %>
                       <%= link_to "フォローを解除する", user_relationships_path(user.id),class:"btn btn-primary", method: :delete %>

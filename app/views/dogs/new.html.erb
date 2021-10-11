@@ -2,6 +2,7 @@
   <div class="row">
     <div class="col-md-8 offset-md-2">
       <h2 class="mt-3"><p>ワンちゃんの情報入力フォーム</p></h2>
+      <%= render "dogs/error", model: @newdog %>
         <%= form_with model: @newdog, local: true do |f| %>
           <div class="form-group ">
             <%= f.label :画像 %>

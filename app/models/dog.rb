@@ -6,6 +6,12 @@ class Dog < ApplicationRecord
   has_many :dog_tags, dependent: :destroy
   has_many :tags, through: :dog_tags
 
+
+  validates :name, presence: true
+  validates :caption, presence: true
+  validates :tag, acceptance: true
+
+
   def favorited_by?(user)
     favorites.where(user_id: user.id).exists?
   end
