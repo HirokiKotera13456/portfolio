@@ -17,6 +17,7 @@ class User < ApplicationRecord
   has_many :followings, through: :relationships, source: :followed
   # 与フォロー関係を通じて参照→follower_idをフォローしている人
 
+
   has_many :entries
   has_many :direct_messages
   has_many :rooms, through: :entries

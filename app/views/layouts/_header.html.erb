@@ -7,7 +7,7 @@
     <div class="collapse navbar-collapse" id="navbarNav">
 　　　　<ul class="navbar-nav ml-auto">
           <% if user_signed_in? %>
-            <li>
+            <li nowrap>
               <%= link_to user_path(current_user.id) do %>
                 <h4><i class="fas fa-home nav-link">マイページ</i></h4>
               <% end %>
@@ -17,19 +17,19 @@
                 <h4><i class="fas fa-users nav-link ">ユーザー一覧</i></h4>
               <% end %>
             </li>
-            <li>
-              <%= link_to dogs_path do %>
-                <h4><i class="fas fa-dog nav-link t">Q&Aコーナー</i></h4>
-              <% end %>
-            </li>
-            <li>
+             <li>
               <%= link_to maps_index_path do %>
                 <h4><i class="fas fa-dog nav-link t">関西ドッグラン一覧</i></h4>
               <% end %>
             </li>
             <li>
+              <%= link_to dogs_path do %>
+                <h4><i class="fas fa-question nav-link t">Q&Aコーナー</i></h4>
+              <% end %>
+            </li>
+            <li>
               <%= link_to new_dog_path do %>
-                <h4><i class="fas fa-dog nav-link ">質問投稿フォーム</i></h4>
+                <h4><i class="fas fa-pen nav-link ">質問投稿フォーム</i></h4>
               <% end %>
             </li>
             <li>
