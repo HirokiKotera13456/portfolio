@@ -14,7 +14,7 @@ User.create!(
 25.times do |n|
     kanji_name = Gimei.kanji
     User.create!(
-        email:"test#{n + 1}@test.com",
+        email:"#{n + 1}@test.com",
         password: "111111",
         name: kanji_name,
         opinion: "柴犬を飼ってます！人懐っこくてすごくかわいいです"

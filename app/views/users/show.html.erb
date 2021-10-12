@@ -36,7 +36,7 @@
                     <%= fields_for @entry do |e| %>
                       <%= e.hidden_field :user_id, :value=> @user.id %>
                     <% end %>
-                    <%= f.submit "チャットを始める" %>
+                    <%= f.submit "メッセージを送る",class:"btn btn-outline-success" %>
                   <% end %>
                 <% end %>
               <% end %>

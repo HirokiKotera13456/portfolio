@@ -1,0 +1,37 @@
+<h2 class="dog-title"><strong>質問一覧</strong></h2>
+  <table class="table table-hover condensed ">
+    <thead>
+      <tr>
+        <th nowrap>犬種</th>
+        <th nowrap>質問内容</th>
+        <th nowrap>ユーザー</th>
+        <th nowrap>タグ</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% dogs.each do |dog| %>
+      <tr>
+        <td nowrap>
+        <%= dog.name %>
+        </td>
+        <td nowrap>
+        <%= dog.caption %>
+        </td>
+        <td nowrap>
+        <%= dog.user.name %>
+        </td>
+        <td nowrap>
+          <% dog.tags.each do |tag| %>
+              <%= tag.name %>
+          <% end %>
+        </td>
+        <td>
+          <%= link_to dog_path(dog.id) do  %>
+            <p class="btn btn-success m-2" >投稿詳細へ</p>
+          <% end %>
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
