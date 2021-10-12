@@ -23,6 +23,9 @@ class DogsController < ApplicationController
 
   def edit
     @dog = Dog.find(params[:id])
+    if @dog.user_id != current_user.id
+      redirect_to dogs_path
+    end
   end
 
   def update

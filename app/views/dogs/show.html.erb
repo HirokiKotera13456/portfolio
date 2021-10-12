@@ -1,68 +1,7 @@
 <div class="container mt-3">
   <div class="row">
     <div class="col-md-12 ">
-      <h2><p>投稿詳細</p></h2>
-      <div class="table-responsive">
-      <table class="table">
-        <thead>
-          <tr>
-            <th></th>
-            <th style="width:100px;">犬種</th>
-            <th style="width:100px;">ユーザー</th>
-            <th style="width:100px;">タグ</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>
-            <%= attachment_image_tag @dog, :image, size: "200x200" %>
-            </td>
-            <td nowrap >
-            <%= @dog.name %>
-            </td>
-            <td>
-              <%= @dog.user.name %>
-            </td>
-            <td>
-            <% @dog.tags.each do |tag| %>
-                <%= tag.name %>
-            <% end %>
-            </td>
-            <td>
-            <% @dog.tags.each do |tag| %>
-                <%= tag.name %>
-            <% end %>
-            </td>
-            <td>
-            <div id="favorite-btn_<%= @dog.id %>" style="width:100px;">
-              <%= render 'favorites/favorite' , dog: @dog %>
-            </td>
-            <td>
-            <% if @dog.user == current_user %>
-              <%= link_to "編集", edit_dog_path, class: "btn btn-success btn-question" %>
-            </td>
-            <td>
-              <%= link_to "削除", dog_path(@dog), method: :delete, class: "btn btn-danger btn-question" %>
-            <% end %>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-      <table>
-        <thead>
-          <tr style="width:100px;">
-            <th style="width:100px;">質問内容</th>
-          </tr>
-        </thead>
-        <%= render "dogs/error", model: @dog_comment %>
-        <tbody>
-            <td style="width:1%" class="qbox">
-            <%= @dog.caption %>
-            </td>
-        </tbody>
-      </table>
-      </div>
-      </div>
+      <%= render "dogs/dogdetail",dog:@dog %>
     </div>
     <div class="table-responsive">
       <div class="col-md-12">
