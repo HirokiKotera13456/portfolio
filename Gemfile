@@ -71,3 +71,8 @@ gem 'kaminari','~> 1.2.1'
 gem 'rails-i18n'
 gem 'faker'
 gem 'gimei'
+gem 'dotenv-rails'
+
+group :production do
+  gem 'mysql2', '>= 0.4.4', '< 0.6.0'
+end
