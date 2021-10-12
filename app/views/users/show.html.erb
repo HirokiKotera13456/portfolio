@@ -24,6 +24,24 @@
                   <%= @user.followings.count %>:フォロー
                <% end %>
                </td>
+               <td>
+
+               <% unless @user.id == current_user.id %>
+                <% if @isRoom == true %>
+                <%= link_to  room_path(@roomId),class:"btn btn-outline-success" do %>
+                  <div>メッセージを送る</div>
+                <% end %>
+                <% else %>
+                  <%= form_for @room do |f| %>
+                    <%= fields_for @entry do |e| %>
+                      <%= e.hidden_field :user_id, :value=> @user.id %>
+                    <% end %>
+                    <%= f.submit "チャットを始める" %>
+                  <% end %>
+                <% end %>
+              <% end %>
+               </td>
+
               <td>
               <% if @user.id == current_user.id %>
                 <%= link_to "編集", edit_user_path(@user),class:"btn btn-outline-info" %>
@@ -54,4 +72,6 @@
     </div>
   </div>
 </div>
+
+
 
