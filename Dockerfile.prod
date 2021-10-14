@@ -1,0 +1,19 @@
+FROM ruby:2.6.3
+
+RUN apt-get update -qq && apt-get install -y build-essential nodejs mariadb-client
+
+RUN mkdir /app
+
+WORKDIR /app
+
+COPY Gemfile /app/Gemfile
+COPY Gemfile.lock /app/Gemfile.lock
+
+RUN bundle config set without development test
+RUN bundle install
+
+COPY . /app
+
+RUN bundle exec rails assets:precompile RAILS_ENV=production
+
+CMD ["bundle", "exec", "puma", "-C", "config/puma.prod.rb"]
