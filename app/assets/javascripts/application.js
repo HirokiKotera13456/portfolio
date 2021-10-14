@@ -21,6 +21,7 @@
 //= require_tree .
 
 
-$(function() {
+
+$(document).on('turbolinks:load', function() {
   $('img[usemap]').rwdImageMaps();
-})
+});
