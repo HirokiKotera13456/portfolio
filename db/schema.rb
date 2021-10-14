@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2021_10_11_010245) do
 
-  create_table "comment_favorites", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "comment_favorites", force: :cascade do |t|
     t.integer "user_id"
     t.integer "dog_comment_id"
     t.integer "dog_id"
@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 2021_10_11_010245) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "direct_messages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "direct_messages", force: :cascade do |t|
     t.string "content"
     t.integer "user_id"
     t.integer "room_id"
@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 2021_10_11_010245) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "dog_comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "dog_comments", force: :cascade do |t|
     t.text "comment"
     t.integer "user_id"
     t.integer "dog_id"
@@ -37,16 +37,16 @@ ActiveRecord::Schema.define(version: 2021_10_11_010245) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "dog_tags", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "dog_id"
-    t.bigint "tag_id"
+  create_table "dog_tags", force: :cascade do |t|
+    t.integer "dog_id"
+    t.integer "tag_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["dog_id"], name: "index_dog_tags_on_dog_id"
     t.index ["tag_id"], name: "index_dog_tags_on_tag_id"
   end
 
-  create_table "dogs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "dogs", force: :cascade do |t|
     t.text "name"
     t.string "image_id"
     t.text "caption"
@@ -55,14 +55,14 @@ ActiveRecord::Schema.define(version: 2021_10_11_010245) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "entries", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "entries", force: :cascade do |t|
     t.integer "user_id"
     t.integer "room_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "favorites", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "favorites", force: :cascade do |t|
     t.integer "user_id"
     t.integer "image_id"
     t.integer "dog_id"
@@ -71,26 +71,26 @@ ActiveRecord::Schema.define(version: 2021_10_11_010245) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "relationships", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "relationships", force: :cascade do |t|
     t.integer "follower_id"
     t.integer "followed_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "rooms", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "rooms", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "tags", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "tags", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
@@ -107,6 +107,4 @@ ActiveRecord::Schema.define(version: 2021_10_11_010245) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "dog_tags", "dogs"
-  add_foreign_key "dog_tags", "tags"
 end
