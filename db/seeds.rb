@@ -4,12 +4,6 @@ Tag.create!([
     { name: '大型犬'}
     ])
 
-User.create!(
-    email:"n1@n1",
-    password: "111111",
-    name: "ニイジマ",
-    opinion: "ポメラニアンを飼ってます。毛がふさふさでかわいいです。"
-)
 
 25.times do |n|
     kanji_name = Gimei.kanji
@@ -21,7 +15,7 @@ User.create!(
     )
     end
 
-    # 15.times do |n|
+    # 25.times do |n|
     # Dog.create!(
     #     user_id: "#{n+1}",
     #     name:"ポメラニアン",
