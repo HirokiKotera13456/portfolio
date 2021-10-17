@@ -24,3 +24,7 @@
 $(function() {
   $('img[usemap]').rwdImageMaps();
 })
+
+$(function(){
+  setTimeout("$('.notice').fadeOut('slow')", 2000);
+});

@@ -50,9 +50,11 @@ p {
 }
 
 .notice {
+  background-color: #ffc8c8;
+  border-radius: 100px;
   text-align: center;
   white-space: nowrap;
-  width: 50%;
+  width: 70%;
   margin-left: auto;
   margin-right: auto;
   color: #757575;
@@ -62,3 +64,4 @@ p {
   margin-left: 20px;
   white-space: nowrap;
 }
+
