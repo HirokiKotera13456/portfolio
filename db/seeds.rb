@@ -1,7 +1,6 @@
 Tag.create!([
-    { name: '小型犬' },
-    { name: '中型犬' },
-    { name: '大型犬'}
+    { name: '室内飼育' },
+    { name: '室外飼育' }
     ])
 
 dog_name = ["柴犬" ,"ポメラニアン", "チワワ" ]
@@ -31,7 +30,7 @@ end
 25.times do |n|
 dog = Dog.find(n+1)
 DogTag.create(
-    dog_id: dog.id, tag_id: rand(1..3)
+    dog_id: dog.id, tag_id: rand(1..2)
 )
 end
     ##Seedは上から順に行われるため、優先度が高いものから作成
