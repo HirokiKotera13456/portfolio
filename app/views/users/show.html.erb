@@ -29,14 +29,14 @@
                <% unless @user.id == current_user.id %>
                 <% if @isRoom == true %>
                 <%= link_to  room_path(@roomId),class:"btn btn-outline-success" do %>
-                  <div>メッセージを送る</div>
+                  <div>チャットルームへ</div>
                 <% end %>
                 <% else %>
                   <%= form_for @room do |f| %>
                     <%= fields_for @entry do |e| %>
                       <%= e.hidden_field :user_id, :value=> @user.id %>
                     <% end %>
-                    <%= f.submit "メッセージを送る",class:"btn btn-outline-success" %>
+                    <%= f.submit "チャットルームへ",class:"btn btn-outline-success" %>
                   <% end %>
                 <% end %>
               <% end %>

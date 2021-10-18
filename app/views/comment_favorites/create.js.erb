@@ -1,1 +1,1 @@
-$('#favorite-btn_<%= @dog.id @dog_comment.id %>').html("<%= j(render partial: "comment_favorites/favorite", locals: { dog: @dog, dog_comment:@dog_comment }) %>");
+$('#favorite-btn_<%= @dog.id %>-<%= @dog_comment.id %>').html("<%= j(render partial: "comment_favorites/favorite", locals: { dog: @dog, dog_comment:@dog_comment }) %>");

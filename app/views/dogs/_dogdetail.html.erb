@@ -25,11 +25,7 @@
                 <%= tag.name %>
             <% end %>
             </td>
-            <td>
-            <% @dog.tags.each do |tag| %>
-                <%= tag.name %>
-            <% end %>
-            </td>
+
             <td>
             <div id="favorite-btn_<%= @dog.id %>" style="width:100px;">
               <%= render 'favorites/favorite' , dog: @dog %>
