@@ -1,5 +1,5 @@
 class DogsController < ApplicationController
-  
+  before_action :authenticate_user!, except: [:index]
 
   def new
     @newdog =Dog.new
