@@ -1,19 +1,19 @@
 <input id="address" type="textbox" value="">
       <input type="button" value="検索" onclick="codeAddress()">
-      <div id='gmap'></div>
+      <div id='map'></div>
 
       <style>
-      #gmap {
+      #map {
         height: 600px;
         width: 600px;
       }
       </style>
 
       <script>
-      let gmap
+      let map
       function initMap(){
         geocoder = new google.maps.Geocoder()
-        gmap = new google.maps.Map(document.getElementById('gmap'), {
+        map = new google.maps.Map(document.getElementById('map'), {
           //latが緯度、lngが経度を示します
           center: {lat: 35.03997632172462, lng:135.6732135105777},
           //数値は0〜21まで指定できます。数値が大きいほど拡大されます
@@ -22,7 +22,7 @@
         //positionに指定した座標にピンを表示させます
         marker = new google.maps.Marker({
           position:  {lat: 35.03997632172462, lng:135.6732135105777},
-          map: gmap
+          map: map
         });
       }
 
@@ -32,9 +32,9 @@
         let inputAddress = document.getElementById('address').value;
         geocoder.geocode( { 'address': inputAddress}, function(results, status) {
           if (status == 'OK') {
-            gmap.setCenter(results[0].geometry.location);
+            map.setCenter(results[0].geometry.location);
             var marker = new google.maps.Marker({
-                gmap: gmap,
+                map: map,
                 position: results[0].geometry.location
             });
           } else {
