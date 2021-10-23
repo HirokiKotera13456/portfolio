@@ -38,10 +38,11 @@ p {
 }
 
 .navbar-light .navbar-brand {
-  font-size: 30px;
+  font-size: 4vw;
   font-family: "arial black";
   color: #ffa7a7;
   margin-right: auto;
+  margin-bottom:35px;
 }
 
 .navbar-expand-lg .navbar-collapse {
@@ -62,5 +63,10 @@ p {
 .navbar-light {
   margin-left: 20px;
   white-space: nowrap;
+}
+
+.fas{
+  margin:5px;
+  font-size: 2.2vmin;
 }
 
