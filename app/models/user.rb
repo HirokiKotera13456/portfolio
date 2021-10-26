@@ -17,7 +17,6 @@ class User < ApplicationRecord
   has_many :followings, through: :relationships, source: :followed
   # 与フォロー関係を通じて参照→follower_idをフォローしている人
 
-
   has_many :entries
   has_many :direct_messages
   has_many :rooms, through: :entries
@@ -26,7 +25,7 @@ class User < ApplicationRecord
 
   # ↓論理削除用メソッド
   def active_for_authentication?
-    super && (self.is_deleted == false)
+    super && (is_deleted == false)
   end
   # ↑論理削除用メソッド
 
@@ -34,9 +33,11 @@ class User < ApplicationRecord
   def follow(user_id)
     relationships.create(followed_id: user_id)
   end
+
   def unfollow(user_id)
     relationships.find_by(followed_id: user_id).destroy
   end
+
   def following?(user)
     followings.include?(user)
   end

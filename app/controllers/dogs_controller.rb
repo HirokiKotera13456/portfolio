@@ -2,18 +2,18 @@ class DogsController < ApplicationController
   before_action :authenticate_user!, except: [:index]
 
   def new
-    @newdog =Dog.new
+    @newdog = Dog.new
   end
 
   def create
     @newdog = Dog.new(dog_params)
     @newdog.user_id = current_user.id
-   if @newdog.save
-     redirect_to dogs_path,notice: "投稿されました"
-   else
+    if @newdog.save
+      redirect_to dogs_path, notice: "投稿されました"
+    else
       @user = current_user
       render :new
-   end
+    end
   end
 
   def index
@@ -31,14 +31,14 @@ class DogsController < ApplicationController
   def update
     @dog = Dog.find(params[:id])
     if @dog.update(dog_params)
-      redirect_to dog_path(@dog.id),notice: "編集されました"
+      redirect_to dog_path(@dog.id), notice: "編集されました"
     else
       render :edit
     end
   end
 
   def show
-    @dog=Dog.find(params[:id])
+    @dog = Dog.find(params[:id])
     @user = @dog.user
     @dog_comment = DogComment.new
   end
@@ -49,11 +49,9 @@ class DogsController < ApplicationController
     redirect_to dogs_path
   end
 
-
   private
 
   def dog_params
     params.require(:dog).permit(:name, :image, :caption, tag_ids: [])
   end
-
 end
