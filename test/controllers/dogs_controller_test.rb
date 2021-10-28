@@ -15,5 +15,4 @@ class DogsControllerTest < ActionDispatch::IntegrationTest
     get dogs_show_url
     assert_response :success
   end
-
 end
