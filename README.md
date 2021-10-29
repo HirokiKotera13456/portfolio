@@ -48,7 +48,6 @@ https://docs.google.com/spreadsheets/d/1UNnY_VRz6ETkY7eTiuQJrCLlazfYESRLGVwjk_zu
 - JSライブラリ：jQuery
 - IDE：VisualStudioCode
 
-## 使用素材
-FontAwesome (https://fontawesome.com/)
+
 
 
