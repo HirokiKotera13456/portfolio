@@ -93,6 +93,6 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   ActionCable.server.config.disable_request_forgery_protection = true
-  config.action_cable.url = "ws://44.199.159.143/cable" 
-  config.action_cable.allowed_request_origins = ['https://44.199.159.143']
+  config.action_cable.url = "ws://【44.199.159.143】/cable" 
+  config.action_cable.allowed_request_origins = ['http://【Elastic IP】']
 end
