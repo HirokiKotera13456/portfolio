@@ -5,7 +5,7 @@
     <tr>
       <td ><%= attachment_image_tag @user, :profile_image, format: "jpeg", fallback: "no_image.jpg", size: "80x80" %></td>
       <td nowrap>回答者：<%= dog_comment.user.name %></td>
-      <td nowrap><%= dog_comment.comment %></td>
+      <td style="width:500px;"><%= dog_comment.comment %></td>
       <td id="favorite-btn_<%= dog.id  %>-<%= dog_comment.id %>" nowrap><%= render 'comment_favorites/favorite', dog_comment:dog_comment,dog:dog %></td>
       <td nowrap>
       <% if dog_comment.user == current_user %>
