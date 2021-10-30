@@ -4,6 +4,6 @@
       <% end %>
   <% else %>
       <%= link_to dog_dog_comment_comment_favorites_path(dog.id, dog_comment.id), method: :post,remote: true do %>
-        <i class="fas fa-bone" ><%= dog_comment.comment_favorites.count %> いいね</i>
+        <i class="fas fa-dog" ><%= dog_comment.comment_favorites.count %> いいね</i>
       <% end %>
   <% end %>
