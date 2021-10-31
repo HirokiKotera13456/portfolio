@@ -19,5 +19,4 @@ class MapsController < ApplicationController
 
   def wakayama
   end
-  
 end

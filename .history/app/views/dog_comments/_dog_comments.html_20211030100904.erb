@@ -1,0 +1,21 @@
+<table class="table">
+    <p>コメント件数：<%= dog.dog_comments.count %></p>
+    <% dog.dog_comments.each do |dog_comment| %>
+  <tbody>
+    <tr>
+      <td ><%= attachment_image_tag @user, :profile_image, format: "jpeg", fallback: "no_image.jpg", size: "80x80" %></td>
+      <td nowrap>回答者：<%= dog_comment.user.name %></td>
+      <td sh><%= dog_comment.comment %></td>
+      <td id="favorite-btn_<%= dog.id  %>-<%= dog_comment.id %>" nowrap><%= render 'comment_favorites/favorite', dog_comment:dog_comment,dog:dog %></td>
+      <td nowrap>
+      <% if dog_comment.user == current_user %>
+            <%= link_to "回答を削除", dog_dog_comment_path(dog_comment.dog, dog_comment),class:"link1", remote: true ,method: :delete ,class:"deleteAnswer" %>
+      <% end %>
+      </td>
+    </tr>
+  </tbody>
+  <% end %>
+</table>
+
+
+
