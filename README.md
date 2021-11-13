@@ -37,9 +37,6 @@
 - AWSでのデプロイ<br>
 - Bootstrapを用いたレイアウト作成<br>
 
-## チャレンジ要素一覧
-https://docs.google.com/spreadsheets/d/1UNnY_VRz6ETkY7eTiuQJrCLlazfYESRLGVwjk_zuw84/edit#gid=0
-
 ## 開発環境
 - Docker
 - OS：Linux(ubuntu)
